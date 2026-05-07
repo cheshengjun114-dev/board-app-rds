@@ -46,9 +46,9 @@ services:
       JWT_SECRET: ${JWT_SECRET}
     ports:
       - "8080:8080"
-    # depends_on:
-    #  db:
-    #   condition: service_healthy # DB 헬스체크 통과 후 시작
+    depends_on:
+      db:
+        condition: service_healthy # DB 헬스체크 통과 후 시작
     networks:
       - board-network
 
